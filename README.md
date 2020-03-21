@@ -1,1 +1,1 @@
-# exercice PHP
+# exercices PHP
