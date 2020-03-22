@@ -6,9 +6,8 @@
     $livre->affiche();
     echo PHP_EOL;
 
-        $sql2='SELECT * FROM livre';
-        $reponse = $con->getBdd()->query($sql2);
-       
+        $sql='SELECT * FROM livre';
+        $reponse = $con->getBdd()->query($sql);
         while ($donnees = $reponse->fetch())
         {
        
@@ -19,6 +18,6 @@
   
        
         }
-
+        
         $reponse->closeCursor();
             
