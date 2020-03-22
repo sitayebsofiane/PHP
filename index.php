@@ -2,8 +2,8 @@
     require 'vendor/autoload.php';
   
     $con = new namespace1\Connect();
-    $person = new namespace2\Personne("lemaire","bruno");
-    $person->affiche();
+    $livre = new namespace2\Livre("titre","author");
+    $livre->affiche();
     echo PHP_EOL;
 
         $sql2='SELECT * FROM livre';
