@@ -1,0 +1,8 @@
+{
+    "autoload": {
+        "psr-4": {
+            "namespace2\\":"pagination",
+            "namespace1\\":""
+        }
+    }
+}
