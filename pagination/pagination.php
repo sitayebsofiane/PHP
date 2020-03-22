@@ -1,8 +1,19 @@
 <?php 
     require '../vendor/autoload.php';
     $con = new namespace1\Connect();
-    $sql='SELECT * FROM livre';
+    if(isset($_GET['page']) AND !empty($_GET['page']) AND $_GET['page']>=0 ){
+        $_GET['page'] = intval($_GET['page']);
+        $pageCourante =  $_GET['page'];
+    }else{
+        $pageCourante = 0;
+    }
+    $livreParPage=6;
+    $sql='SELECT * FROM livre order by id desc  limit '.$livreParPage.' offset '.$pageCourante;
+    $depart = ($pageCourante - 1)*$livreParPage;
     $reponse = $con->getBdd()->query($sql);
+    $livreTotal= $con->getBdd()->query('SELECT * FROM livre')->rowCount();
+    $pagesTotal = ceil($livreTotal/$livreParPage);
+    echo $livreTotal ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +51,10 @@
     <?php }  $reponse->closeCursor();?>
 <!--#livres-->
 </div>
- 
+<?php
+    for($i=0;$i<$pagesTotal;$i++)
+        echo "<a href='pagination.php?page='$i'>". $i ."</a> ";
+?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
