@@ -13,7 +13,7 @@
     $reponse = $con->getBdd()->query($sql);
     $livreTotal= $con->getBdd()->query('SELECT * FROM livre')->rowCount();
     $pagesTotal = ceil($livreTotal/$livreParPage);
-    echo $livreTotal ;
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,14 +37,13 @@
 
  <div class="row">
  <!--livres-->
- <?php 
+ <?php
     while ($donnees = $reponse->fetch())
     {?>
  <div class="card col-md-4" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="image">
     <div class="card-body">
-        <h5 class="card-title">author:<?= $donnees['author'] ?></h5>
-        <p class="card-text">titre:<?= $donnees['title'] ?></p>
+        <h5 class="card-title"><?= $donnees['author'] ?></h5>
+        <p class="card-text"><?= $donnees['title'] ?></p>
         <a href="#" class="btn btn-primary">voir le livre</a>
     </div>
   </div>

@@ -1,12 +1,13 @@
 <?php 
     require 'vendor/autoload.php';
-  
-    $con = new namespace1\Connect();
-    $livre = new namespace2\Livre("titre","author");
+    use namespace1\Connect;
+    use namespace2\Livre;
+    $con = new Connect();
+    $livre = new Livre("titre","author");
     $livre->affiche();
     echo PHP_EOL;
 
-        $sql='SELECT * FROM livre';
+        $sql='SELECT * FROM livre limit 5';
         $reponse = $con->getBdd()->query($sql);
         while ($donnees = $reponse->fetch())
         {
