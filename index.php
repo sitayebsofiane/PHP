@@ -7,19 +7,20 @@
     $livre->affiche();
     echo PHP_EOL;
 
-        $sql='SELECT * FROM livre limit 5';
-        $reponse = $con->getBdd()->query($sql);
-        while ($donnees = $reponse->fetch())
-        {
+         $sql='SELECT * FROM livre limit 5';
+         $reponse = $con->getBdd()->query($sql);
+         while ($donnees = $reponse->fetch())
+         {
        
-            echo $donnees['id'].PHP_EOL; 
-            echo $donnees['title'].PHP_EOL; 
-            echo $donnees['author'].PHP_EOL;
-            echo"--------------------------------".PHP_EOL;
+             echo $donnees['id'].PHP_EOL; 
+             echo $donnees['title'].PHP_EOL; 
+             echo $donnees['author'].PHP_EOL;
+             echo"--------------------------------".PHP_EOL;
   
        
-        }
+         }
         
-        $reponse->closeCursor();
+         $reponse->closeCursor();
+         
 
             

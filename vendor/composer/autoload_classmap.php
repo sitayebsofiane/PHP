@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'namespace1\\Connect' => $baseDir . '/Connect.php',
-    'namespace2\\Personne' => $baseDir . '/pagination/Personne.php',
+    'namespace2\\Livre' => $baseDir . '/pagination/Livre.php',
 );

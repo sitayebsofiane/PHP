@@ -27,7 +27,7 @@ class ComposerStaticInit33e2c3f0c56c5e784c7335dc30b3281f
 
     public static $classMap = array (
         'namespace1\\Connect' => __DIR__ . '/../..' . '/Connect.php',
-        'namespace2\\Personne' => __DIR__ . '/../..' . '/pagination/Personne.php',
+        'namespace2\\Livre' => __DIR__ . '/../..' . '/pagination/Livre.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -9,7 +9,7 @@
     }
     $livreParPage=6;
     $sql='SELECT * FROM livre order by id desc  limit '.$livreParPage.' offset '.$pageCourante;
-    $depart = ($pageCourante - 1)*$livreParPage;
+    $depart = ($pageCourante)*$livreParPage;
     $reponse = $con->getBdd()->query($sql);
     $livreTotal= $con->getBdd()->query('SELECT * FROM livre')->rowCount();
     $pagesTotal = ceil($livreTotal/$livreParPage);
