@@ -3,9 +3,9 @@ require '../vendor/autoload.php';
 $con = new namespace1\Connect();
 $sql = 'SELECT * FROM pays;';
 $reponse = $con->getBdd()->query($sql);
-if (isset($_POST['pays']) && !empty($_POST['pays'])) {
-    $pays = $_POST['pays'];
-    echo "le pyas choisie est $pays";
+if (isset($_POST['idPays']) && !empty($_POST['idPays'])) {
+    $idPays = $_POST['idPays'];
+    echo "l'id du pays choisie est $idPays";
 }
 ?>
 <!DOCTYPE html>
@@ -26,11 +26,11 @@ if (isset($_POST['pays']) && !empty($_POST['pays'])) {
         <form method="post" action="" enctype="multipart/form-data">
             <p>
                 <label for="pays">Dans quel pays habitez-vous ?</label><br />
-                <select name="pays" id="pays" class="form-control">
+                <select name="idPays" class="form-control">
                     <?php
                     while ($donnee = $reponse->fetch()) {
                     ?>
-                        <option value=<?=$donnee['nom']?>><?=$donnee['nom']?></option>
+                        <option value=<?=$donnee['id']?>><?=$donnee['nom']?></option>
                     <?php } $reponse->closeCursor(); ?>
                 </select>
             </p>
