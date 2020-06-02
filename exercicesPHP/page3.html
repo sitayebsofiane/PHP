@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="page3.php">
+ 
+        <fieldset>
+            <legend>Vos coordonnées</legend> <!-- Titre du fieldset --> 
+            <label for="email">votre e-mail ?</label>
+            <input type="email" name="email" id="email" />
+            <hr>
+            <textarea name="commentaire" id="precisions" cols="40" rows="4"></textarea>
+     
+        </fieldset>
+      
+        <fieldset>
+            <legend>Votre choix avec checkbox</legend> <!-- Titre du fieldset -->
+            <p>
+                <input type="checkbox" name="case1" id="case1" /> <label for="case1">case1</label><br />
+                <input type="checkbox" name="case2" id="case2" /> <label for="case2">case2</label><br />
+                <input type="checkbox" name="case3" id="case3" /> <label for="case3">case3</label><br />
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Votre choix avec radio</legend> <!-- Titre du fieldset -->
+            <p>
+                <input type="radio" name="button" id="button1" value="a" /> <label for="button1">case1</label><br />
+                <input type="radio" name="button" id="button2"value="b"/> <label for="button2">case2</label><br />
+                <input type="radio" name="button" id="button3"value="q" /> <label for="button3">case3</label><br />
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Votre choix avec checkbox</legend> <!-- Titre du fieldset -->
+            <p>
+                <input type="file" name="file" id="file" /> 
+               
+            </p>
+        </fieldset>
+        <div >
+            <input type="submit" value="envoyer">
+            <input type="reset"  value="mettre a zero">		
+        </div>
+     </form>
+</body>
+</html>
